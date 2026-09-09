@@ -1,0 +1,15 @@
+{
+  "name": "Neon Apex: Arcade Racing",
+  "short_name": "Neon Apex",
+  "description": "A fast neon arcade racing game.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#080b15",
+  "theme_color": "#090b14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
+
