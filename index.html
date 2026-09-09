@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#090b14" />
+  <title>NEON APEX â€” Arcade Racing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+    <canvas id="gameCanvas" aria-label="Neon Apex racing game"></canvas>
+    <div id="vignette"></div>
+    <section id="hud" class="hidden">
+      <div class="hud-top"><div class="brand-mini">NEON APEX</div><button id="pauseBtn" class="icon-btn" aria-label="Pause">â…¡</button></div>
+      <div class="stat-grid"><div class="stat"><span>SPEED</span><strong id="speedValue">000</strong><em>KM/H</em></div><div class="stat"><span>SCORE</span><strong id="scoreValue">0</strong></div><div class="stat"><span>DISTANCE</span><strong id="distanceValue">0.0</strong><em>KM</em></div><div class="stat"><span>COINS</span><strong id="coinsValue">0</strong></div></div>
+      <div class="nitro-wrap"><span>NITRO</span><div class="nitro-bar"><i id="nitroFill"></i></div></div>
+      <div id="objective" class="objective"></div>
+    </section>
+    <div id="mobileControls" class="hidden"><button data-control="left" aria-label="Steer left">â—€</button><button data-control="nitro" class="nitro-control" aria-label="Nitro">Nâ‚‚O</button><button data-control="right" aria-label="Steer right">â–¶</button></div>
+    <div id="screenLayer">
+      <section id="mainMenu" class="screen active">
+        <div class="menu-card hero"><p class="eyebrow">ARCADE RACING // 2088</p><h1>NEON<br><span>APEX</span></h1><p class="tagline">Own the lane. Chase the glow.</p><button class="primary" data-action="play">START RACE <b>â€º</b></button><div class="menu-row"><button data-action="modes">GAME MODES</button><button data-action="garage">GARAGE</button><button data-action="settings">SETTINGS</button></div><p class="bank">BANK <strong id="bankCoins">0</strong> â—ˆ &nbsp; BEST <strong id="menuBest">0</strong></p></div>
+      </section>
+      <section id="modeMenu" class="screen"><div class="panel"><button class="back" data-action="menu">â€¹ BACK</button><p class="eyebrow">SELECT EVENT</p><h2>GAME MODES</h2><div class="mode-list"><button class="mode-card selected" data-mode="endless"><b>ENDLESS RACE</b><span>Infinite run. The road gets meaner.</span></button><button class="mode-card" data-mode="time"><b>TIME TRIAL</b><span>90 seconds. Push your distance.</span></button><button class="mode-card" data-mode="challenge"><b>CHALLENGE</b><span>Collect 25 coins in one run.</span></button></div><button id="modeStart" class="primary">RACE NOW <b>â€º</b></button></div></section>
+      <section id="garageMenu" class="screen"><div class="panel garage"><button class="back" data-action="menu">â€¹ BACK</button><p class="eyebrow">YOUR COLLECTION</p><h2>GARAGE</h2><div id="carCards" class="car-cards"></div><div id="carDetails" class="car-details"></div><button id="carSelect" class="primary">SELECT CAR</button></div></section>
+      <section id="settingsMenu" class="screen"><div class="panel settings"><button class="back" data-action="menu">â€¹ BACK</button><p class="eyebrow">TUNE YOUR RIDE</p><h2>SETTINGS</h2><label class="setting">SOUND FX <button data-setting="sound" class="toggle"></button></label><label class="setting">MUSIC <button data-setting="music" class="toggle"></button></label><label class="setting">GRAPHICS <select id="graphics"><option value="high">HIGH</option><option value="low">LOW</option></select></label><div class="controls-help"><b>CONTROLS</b><p>â† â†’ / A D &nbsp; steer<br>SPACE &nbsp; nitro<br>ESC &nbsp; pause</p></div></div></section>
+      <section id="pauseMenu" class="screen"><div class="panel small"><p class="eyebrow">PIT STOP</p><h2>PAUSED</h2><button data-action="resume" class="primary">RESUME</button><button data-action="restart">RESTART</button><button data-action="menu">MAIN MENU</button></div></section>
+      <section id="gameOver" class="screen"><div class="panel results"><p id="resultTitle" class="eyebrow">RACE COMPLETE</p><h2 id="resultHeading">GAME OVER</h2><div class="result-score"><span>FINAL SCORE</span><strong id="finalScore">0</strong></div><div class="result-stats"><div><span>DISTANCE</span><b id="finalDistance">0.0 KM</b></div><div><span>COINS</span><b id="finalCoins">0</b></div><div><span>BEST</span><b id="finalBest">0</b></div></div><button data-action="restart" class="primary">RACE AGAIN <b>â€º</b></button><button data-action="menu">MAIN MENU</button></div></section>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
+
